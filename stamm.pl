@@ -71,3 +71,10 @@ hat_cousinen(X,Y):-elternteil(W,X),elternteil(Z,Y),geschwister(W,Z).
 
 
 bruder(X,Y):-maennlich(X),elternteil(Z,X),elternteil(Z,Y),X\=Y.
+
+nichte(N, OnkelTante):- weiblich(N),
+                        elternteil(VaterMutter, N),
+                        geschwister(VaterMutter, OnkelTante),
+                        write(N),tab(1),write('ist Nichte von'),tab(1),write(OnkelTante),tab(1),write(', weil'), tab(1),write(VaterMutter),
+                        tab(1),write('ein Elternteil von'),tab(1),write(N),tab(1),write('ist und'),tab(1),write(VaterMutter),tab(1),write('und'),
+                        tab(1),write(OnkelTante),tab(1),write('Geschwister sind.').
