@@ -1,0 +1,8 @@
+(require (lib "math.ss"))
+(define (quadrat x) (* x x))
+(display (quadrat 5))
+(newline)
+
+(define (kreis r) (* (quadrat r) pi))
+(display (kreis 5))
+(newline)

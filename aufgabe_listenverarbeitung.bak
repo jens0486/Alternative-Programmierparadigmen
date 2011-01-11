@@ -1,0 +1,23 @@
+(require (lib "trace.ss"))
+
+(define (anzElemente liste)
+(cond
+[(null? liste) 0]
+[else (+ 1 (anzElemente (cdr liste)))] ))
+
+(define (sumElemente liste)
+(cond
+[(null? liste) 0]
+[else (+ (car liste)
+(sumElemente (cdr liste)))] ))
+
+(define (anfuegen el liste)
+(cond ((null? liste) (cons el ()))
+(else (cons (car liste)
+(anfuegen el (cdr liste))))))
+
+(define (umkehr liste)
+(cond ((null? liste) liste)
+((null? (cdr liste)) liste)
+(else (anfuegen (car liste)
+(umkehr (cdr liste))))))
